@@ -1,0 +1,439 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@500;700&display=swap");
+
+:root {
+  --background-color: white;
+  --text-color: black;
+}
+
+[data-theme="light"] {
+  --background-color: white; /* Use #f8f9fa for light theme */
+  --text-color: #2a292b;
+  --bg-color: #f8f9fa;
+}
+
+[data-theme="dark"] {
+  --background-color: black;
+  --text-color: white;
+  --bg-color: #2a292b;
+}
+
+.productListPage {
+  font-family: "Roboto", sans-serif;
+
+  /* background-color: #f8f9fa;  */
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  padding: 1rem 5rem;
+  max-width: 1800px;
+}
+
+.container {
+  margin-top: 50px;
+}
+
+.card {
+  transition: transform 0.2s, box-shadow 0.2s;
+
+  border: none; /* Remove default border */
+
+  border-radius: 10px; /* Rounded corners */
+
+  overflow: hidden; /* Prevent overflow of content */
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Add shadow */
+}
+
+.card-img-top {
+  border-radius: 10px 10px 0 0; /* Rounded top corners */
+}
+
+.card-title {
+  font-family: "Montserrat", sans-serif; /* Use Montserrat for titles */
+
+  font-size: 1.25rem;
+
+  color: #343a40; /* Darker text color */
+}
+
+.card-text {
+  color: #495057; /* Slightly lighter text color */
+}
+
+.text-danger {
+  font-weight: bold; /* Bold discount text */
+}
+
+.rating {
+  font-size: 1.5rem; /* Increase star size */
+}
+
+.text-warning {
+  color: #ffc107; /* Gold color for filled stars */
+}
+
+.text-muted {
+  color: #e4e5e9; /* Light gray for unfilled stars */
+}
+
+.badge {
+  font-size: 0.75rem; /* Adjust font size if needed */
+
+  padding: 0.5em 0.75em; /* Add padding to the badge */
+}
+
+.rating-stars {
+  font-size: 1rem;
+  /* background: #f1f1ec; */
+  color: yellow;
+  border-radius: 5px;
+  padding: 0px 5px;
+}
+
+.tooltip-text {
+  visibility: hidden;
+
+  width: 250px;
+
+  background-color: #e23e54;
+
+  color: #fff;
+
+  text-align: center;
+
+  border-radius: 5px;
+
+  padding: 5px;
+
+  position: absolute;
+
+  z-index: 1;
+
+  bottom: 125%;
+
+  left: 50%;
+
+  margin-left: -100px;
+
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+span:hover .tooltip-text {
+  visibility: visible;
+
+  opacity: 1;
+}
+
+.zoomed-image-container {
+  position: relative;
+
+  overflow: hidden; /* Hide overflow to keep the zoomed image within bounds */
+}
+
+.zoomed-image {
+  transition: transform 0.3s ease; /* Smooth transition */
+
+  transform: scale(2); /* Scale to 2x the original size */
+
+  position: absolute; /* Position it absolutely */
+
+  left: 0; /* Align to the left */
+
+  top: 0; /* Align to the top */
+
+  z-index: 10; /* Ensure it's above other content */
+}
+
+del {
+  text-decoration: line-through; /* Ensure strikethrough is applied */
+
+  text-decoration-thickness: 3px; /* Adjust thickness of the line */
+
+  text-decoration-color: red; /* Change the color of the strikethrough line */
+
+  text-decoration-style: solid; /* Change the style of the line (solid, dashed, etc.) */
+}
+
+.pagination {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  margin: 20px 0;
+}
+
+.pagination ul {
+  list-style: none;
+
+  display: flex;
+
+  padding: 0;
+}
+
+.pagination li {
+  margin: 0 5px;
+}
+
+.pagination button {
+  background-color: #007bff; /* Bootstrap primary color */
+
+  color: white;
+
+  border: none;
+
+  padding: 10px 15px;
+
+  border-radius: 5px;
+
+  cursor: pointer;
+
+  transition: background-color 0.3s ease;
+}
+
+.pagination button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+.pagination button:disabled {
+  background-color: #ccc; /* Gray for disabled buttons */
+
+  cursor: not-allowed;
+}
+
+.pagination .active {
+  background-color: #28a745; /* Green for active page */
+
+  color: white;
+
+  font-weight: bold;
+}
+
+.product-list-loader {
+  position: absolute;
+
+  top: 50%;
+
+  left: 50%;
+  z-index: 999999;
+
+  transform: translate(-50%, -50%);
+
+  font-size: 1.5rem;
+
+  color: #c62e2e; /* Change color as needed */
+}
+.product-title {
+  color: black;
+  background-color: #fffdd0;
+  text-align: center;
+  padding: 8px 10px;
+}
+
+.product-title:hover {
+  color: black;
+  background-color: #ffd700;
+  cursor: pointer;
+}
+
+.product-list-sidebar {
+  position: fixed;
+  height: calc(100vh - 8%);
+  overflow-y: auto;
+
+  top: 8%;
+
+  left: 0px;
+
+  width: 350px;
+
+  height: 100vh;
+
+  /* background-color: #222023; */
+  background-image: -webkit-linear-gradient(top, #222023, #1e2c47);
+  background-image: -webkit-linear-gradient(top, #222023, #1e2c47);
+  color: white;
+
+  padding: 20px;
+
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+
+  transition: left 0.3s ease, opacity 0.3s ease;
+
+  z-index: 999999;
+
+  opacity: 1;
+}
+
+.product-list-sidebar.visible {
+  left: 0;
+
+  opacity: 1;
+}
+
+.product-list-sidebar h4 {
+  margin-top: 5rem;
+  margin-bottom: 20px;
+  color: white;
+
+  font-size: 1.5rem;
+}
+
+.product-list-sidebar label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.product-list-sidebar input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  transform: scale(1.5);
+  cursor: pointer;
+  margin-right: 15px;
+  border-radius: 50%;
+}
+
+.rating-filter-checkbox {
+  display: none;
+}
+
+/* Create the switch */
+
+.rating-filter-switch {
+  position: relative;
+
+  display: inline-flex;
+  /* text-align: left; */
+  /* align-items: center; */
+  width: 60px;
+  margin-left: 10px;
+  height: 34px;
+}
+
+/* Create the slider */
+
+.rating-filter-slider {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(152, 54, 54); /* Background color when off */
+  transition: 0.4s; /* Transition effect */
+  border-radius: 34px; /* Rounded corners */
+  /* margin-top: 50px; */
+}
+
+/* Create the circle inside the switch */
+
+.rating-filter-slider:before {
+  position: absolute;
+  content: "";
+  height: 26px; /* Height of the circle */
+  width: 26px; /* Width of the circle */
+  left: 4px; /* Position of the circle */
+  bottom: 4px; /* Position of the circle */
+  background-color: white; /* Circle color */
+  transition: 0.4s; /* Transition effect */
+  border-radius: 50%; /* Make it a circle */
+}
+
+/* Change the background color and position of the circle when checked */
+
+.rating-filter-checkbox:checked + .rating-filter-slider {
+  background-color: #4caf50; /* Background color when on */
+}
+
+.rating-filter-checkbox:checked + .rating-filter-slider:before {
+  transform: translateX(26px); /* Move the circle to the right */
+}
+
+.range-slider {
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* align-items: center; */
+  width: 300px;
+  margin: auto;
+}
+
+.range-slider .price-slider {
+  position: absolute;
+
+  cursor: pointer;
+  /* 
+  top: 0;*/
+  margin-top: -3rem;
+  margin-left: 5%;
+  margin-right: 5%;
+
+  left: 0;
+
+  /* right: 0;
+
+  bottom: 0; */
+
+  background-color: #ccc;
+
+  transition: 0.4s;
+
+  border-radius: 34px;
+  width: 90%;
+}
+
+/* .price-slider:before {
+
+  position: absolute;
+
+  content: "";
+
+  height: 26px;
+
+  width: 26px;
+
+  left: 4px;
+
+  bottom: 4px;
+
+  background-color: white;
+
+  transition: .4s;
+
+  border-radius: 50%;
+
+} */
+
+/* input:checked + .price-slider {
+
+  background-color: #2196F3;
+
+}
+
+
+input:checked + .slider:before {
+
+  transform: translateX(26px);
+
+} */
+
+.range-slider .values {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Responsive adjustments */
+
+@media (max-width: 768px) {
+  .card {
+    margin-bottom: 20px;
+  }
+}

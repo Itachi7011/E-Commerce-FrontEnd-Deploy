@@ -1,0 +1,244 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --background-color: white;
+  --text-color: black;
+}
+
+[data-theme="light"] {
+  --background-color: white; /* Use #f8f9fa for light theme */
+  --text-color: black;
+}
+
+[data-theme="dark"] {
+  --background-color: black;
+  --text-color: white;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  z-index: -1;
+  opacity: 0;
+  transition: 1s all;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999999;
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  box-shadow: 0px 10px 10px 3px rgba(0, 0, 0, 0.3);
+  /* position: relative; */
+  padding: 0px 70px;
+  font-family: "Lato", sans-serif;
+}
+.navbar-logo {
+  color: #ff3f34;
+  text-decoration: none;
+  font-size: 25px;
+  padding: 0px 20px;
+}
+
+.navbar-links {
+  list-style-type: none;
+  display: flex;
+}
+.navbar-links li a {
+  display: block;
+  text-decoration: none;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding: 15px 15px;
+  font-weight: 500;
+  transition: 0.4s all;
+  font-size: small;
+}
+.navbar-input-search-bar {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.navbar-links li.navbar-dropdown {
+  position: relative;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.navbar-links li.navbar-dropdown:hover .dropdown {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.navbar-links li.navbar-dropdown .dropdown {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  padding: 10px 0;
+  top: 100%;
+  transform: translateY(50px);
+  left: 0;
+  width: 250px;
+  background-color: #fff;
+  color: black;
+  box-shadow: 0px 10px 10px 3px rgba(0, 0, 0, 0.3);
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  z-index: 111;
+  transition: 0.4s all;
+}
+
+.navbar-links li.navbar-dropdown .dropdown a {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: 300;
+}
+.navbar-dropdown .dropdown a:hover {
+  padding-left: 30px;
+}
+
+.navbar-links li a:hover {
+  color: #ff3f34;
+}
+
+.flip-horizontal {
+  transform: scaleX(-1);
+}
+
+::placeholder {
+  color: #666;
+  font-weight: 300;
+}
+
+/* For large screens (desktops) */
+
+@media only screen and (min-width: 1200px) {
+  .navbar {
+    padding: 0px 100px;
+  }
+
+  .navbar-links li a {
+    font-size: 18px;
+  }
+
+  .navbar-links li.navbar-dropdown .dropdown {
+    width: 300px;
+  }
+}
+
+/* For medium screens (laptops) */
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .navbar {
+    padding: 0px 50px;
+  }
+
+  .navbar-links li a {
+    font-size: 16px;
+  }
+
+  .navbar-links li.navbar-dropdown .dropdown {
+    width: 250px;
+  }
+
+  .navbar-logo {
+    display: block;
+
+    text-align: center;
+
+    margin: 10px auto;
+  }
+}
+
+/* For small screens (tablets) */
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .navbar {
+    padding: 0px 20px;
+  }
+
+  .navbar-links li a {
+    font-size: 14px;
+  }
+
+  .navbar-links li.navbar-dropdown .dropdown {
+    width: 200px;
+  }
+
+  .navbar-logo {
+    display: block;
+
+    text-align: center;
+
+    margin: 10px auto;
+  }
+}
+
+/* For extra small screens (mobiles) */
+
+@media only screen and (max-width: 767px) {
+  .navbar {
+    padding: 0px 10px;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+  }
+
+  .navbar-links li {
+    margin-bottom: 10px;
+  }
+
+  .navbar-links li a {
+    font-size: 12px;
+  }
+
+  .navbar-logo {
+    display: block;
+
+    text-align: center;
+
+    margin: 10px auto;
+  }
+
+  .navbar-links li.navbar-dropdown .dropdown {
+    position: absolute;
+
+    top: 100%;
+
+    left: 0;
+
+    width: 100%;
+
+    visibility: hidden;
+
+    opacity: 0;
+
+    transform: translateY(50px);
+  }
+
+  .navbar-links li.navbar-dropdown:hover .dropdown {
+    visibility: visible;
+
+    opacity: 1;
+
+    transform: translateY(0px);
+    margin-left: 70px;
+    margin-top: -10px;
+  }
+}

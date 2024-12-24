@@ -1,0 +1,179 @@
+:root {
+  --background-color: white;
+  --text-color: black;
+}
+
+[data-theme="light"] {
+  --background-color: white; /* Use #f8f9fa for light theme */
+  --text-color: black;
+}
+
+[data-theme="dark"] {
+  --background-color: black;
+  --text-color: white;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.adminListsSearchBar {
+  margin-left: 63%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.adminListsSearchBar input {
+  width: 30rem;
+  height: 7vh;
+  border-radius: 2rem;
+  font-size: larger;
+}
+
+.sublocationList {
+  margin-top: 7rem;
+}
+
+/* CK Editor */
+
+.ck.ck-editor__main > .ck-editor__editable {
+  height: 30vh !important;
+}
+
+.checkbox-group {
+  display: flex;
+
+  flex-direction: row; /* Arrange checkboxes in a row */
+
+  margin: 20px 0; /* Add some margin */
+}
+
+.checkbox-option {
+  position: relative;
+
+  padding-left: 30px; /* Space for the custom checkbox */
+
+  cursor: pointer; /* Change cursor to pointer */
+
+  font-weight: 400; /* Font weight */
+
+  user-select: none; /* Prevent text selection */
+
+  margin-right: 20px; /* Space between checkboxes */
+}
+
+.checkbox-option:last-child {
+  margin-right: 0; /* Remove margin for the last checkbox */
+}
+
+.checkbox-option input {
+  position: absolute;
+
+  opacity: 0; /* Hide the default checkbox */
+
+  cursor: pointer; /* Change cursor to pointer */
+}
+
+.checkbox-label {
+  display: inline-block;
+
+  padding: 10px 20px; /* Padding for the label */
+
+  border: 2px solid #007bff; /* Border color */
+
+  border-radius: 5px; /* Rounded corners */
+
+  transition: background-color 0.3s, color 0.3s; /* Transition for hover effects */
+}
+
+.checkbox-option input:checked + .checkbox-label {
+  background-color: #007bff; /* Background color when checked */
+
+  color: white; /* Text color when checked */
+}
+
+.checkbox-option:hover .checkbox-label {
+  background-color: #e7f1ff; /* Light background on hover */
+}
+
+.switch {
+  position: relative;
+
+  display: inline-block;
+
+  width: 60px;
+
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+
+  width: 0;
+
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+
+  cursor: pointer;
+
+  top: 0;
+
+  left: 0;
+
+  right: 0;
+
+  bottom: 0;
+
+  background-color: #ccc;
+
+  transition: 0.4s;
+
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+
+  content: "";
+
+  height: 26px;
+
+  width: 26px;
+
+  left: 4px;
+
+  bottom: 4px;
+
+  background-color: white;
+
+  transition: 0.4s;
+
+  border-radius: 50%;
+}
+
+.switch input:checked + .slider {
+  background-color: #4caf50; /* Green when enabled */
+}
+
+.switch input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Optional: Add a red color when disabled */
+
+.switch input:not(:checked) + .slider {
+  background-color: #f44336; /* Red when disabled */
+
+  .ad-image:hover {
+    filter: brightness(0.7); /* Reduce brightness on hover */
+  }
+
+  .ad-image:hover + .content-overlay {
+    opacity: 1;
+
+    pointer-events: auto;
+  }
+}

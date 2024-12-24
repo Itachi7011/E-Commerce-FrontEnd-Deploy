@@ -1,0 +1,15 @@
+:root {
+    --background-color: white;
+    --text-color: black;
+  }
+  
+  [data-theme="light"] {
+    --background-color: white; /* Use #f8f9fa for light theme */
+    --text-color: black;
+  }
+  
+  [data-theme="dark"] {
+    --background-color: black;
+    --text-color: white;
+  }
+  

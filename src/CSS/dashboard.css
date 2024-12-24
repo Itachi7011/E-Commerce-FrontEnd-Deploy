@@ -1,0 +1,52 @@
+
+:root {
+  --background-color: white;
+  --text-color: black;
+}
+
+[data-theme="light"] {
+  --background-color: white; /* Use #f8f9fa for light theme */
+  --text-color: black;
+}
+
+[data-theme="dark"] {
+  --background-color: black;
+  --text-color: white;
+}
+
+.dashboard-top-col {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: flex-start;
+
+  align-items: flex-start;
+  border-radius: 10px;
+}
+
+.dashboard1-top-col {
+  display: flex;
+
+  flex-direction: column;
+
+  /* justify-content: center; */
+
+  align-items: center;
+  border-radius: 10px;
+}
+
+.dashboard-top-col_icon {
+  margin-left: 10rem; /* remove the margin-left */
+
+  align-self: flex-end;
+
+  position: relative;
+
+  top: -1rem;
+}
+
+.dashboard-top-col > hr {
+  display: block; /* add this */
+  width: 100%;
+}

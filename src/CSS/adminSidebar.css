@@ -1,0 +1,504 @@
+/* Admin Sidebar */
+
+:root {
+  --background-color: white;
+  --text-color: black;
+}
+
+[data-theme="light"] {
+  --background-color: white; /* Use #f8f9fa for light theme */
+  --text-color: black;
+}
+
+[data-theme="dark"] {
+  --background-color: black;
+  --text-color: white;
+}
+
+.side-bar {
+  margin-left: 24.2rem;
+  background: #1b1a1b;
+  backdrop-filter: blur(15px);
+  width: 320px;
+  height: 100vh;
+  top: -6rem;
+  left: -25rem;
+  overflow-y: auto;
+  transition: 0.6s ease;
+  transition-property: left;
+  display: none;
+  position: fixed;
+  z-index: 999;
+}
+
+.side-bar::-webkit-scrollbar {
+  width: 0px;
+}
+
+.side-bar.active {
+  display: block;
+}
+
+.side-bar header {
+  position: sticky; /* Make the header sticky */
+
+  top: 0; /* Stick to the top of the sidebar */
+
+  left: 0; /* Align to the left */
+
+  width: 100%; /* Full width */
+
+  z-index: 1000; /* Ensure it is above other elements */
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for better visibility */
+}
+
+h1 {
+  text-align: center;
+  font-weight: 500;
+  font-size: 25px;
+  padding-bottom: 13px;
+  font-family: sans-serif;
+  letter-spacing: 2px;
+}
+
+.side-bar .menu {
+  width: 100%;
+  /* margin-top: 30px; */
+  padding-top: 17px;
+}
+
+.side-bar .menu .item {
+  position: relative;
+  cursor: pointer;
+}
+.item {
+  margin-top: 10px;
+}
+
+.side-bar .menu .item a {
+  color: #fff;
+  font-size: 15px;
+  text-decoration: none;
+  display: block;
+  line-height: 60px;
+  /* margin-left: 1rem; */
+  padding-left: 30px;
+}
+.side-bar .menu .item a svg {
+  font-size: x-large;
+  font-weight: 500;
+  margin-right: 1rem;
+}
+
+.side-bar .menu .item a:hover {
+  background: #33363a;
+  transition: 0.3s ease;
+}
+
+.side-bar .menu .item i {
+  margin-right: 15px;
+}
+
+.side-bar .menu .item a .dropdown {
+  position: absolute;
+  right: 5px;
+  margin: 20px;
+  transition: 0.3s ease;
+}
+
+.side-bar .menu .item .sub-menu {
+  background: #262627;
+  display: none;
+}
+
+.side-bar .menu .item .sub-menu a {
+  padding-left: 4.5rem;
+}
+
+.rotate {
+  transform: rotate(90deg);
+}
+
+.close-btn {
+  position: absolute;
+  color: red;
+  background: white;
+
+  font-size: 23px;
+  right: 0px;
+  /* margin: 15px; */
+  margin-left: 1rem;
+  margin-right: 1.5rem;
+
+  cursor: pointer;
+  padding: 0.4rem;
+  border-radius: 5px;
+  border: 1px solid white;
+}
+
+.menu-btn i {
+  position: fixed; /* Make the header sticky */
+
+  top: -0.8rem; /* Stick to the top of the sidebar */
+
+  left: 4rem; /* Align to the left */
+  background: #1b1a1b;
+
+  z-index: 1000;
+  color: rgb(255, 255, 255);
+  font-size: 35px;
+  margin: 25px;
+  margin-left: 1rem;
+  cursor: pointer;
+  z-index: 999999;
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: 0.4rem 0.6rem;
+}
+
+.main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+.main h1 {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 60px;
+  text-align: center;
+  line-height: 80px;
+}
+
+.sidebar-image {
+  width: 100px;
+  height: 100px;
+  /* margin: 15px; */
+  border-radius: 10px;
+  margin-left: 70px;
+  border: 3px solid #b4b8b9;
+}
+.smallSidebarImage {
+  width: 3rem; /* Width when sidebar is not active */
+  height: 3rem;
+}
+
+header {
+  background: #33363a;
+}
+
+.active {
+  display: block;
+}
+.sidebarNotActive {
+  width: 120px; /* Width when sidebar is not active */
+
+  display: block; /* Ensure it's displayed */
+}
+
+@media (max-width: 900px) {
+  .main h1 {
+    font-size: 40px;
+    line-height: 60px;
+  }
+}
+
+/* Admin Navbar */
+
+.navbar-main {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 10px 20px;
+
+  color: white;
+  z-index: 99999;
+
+  background-color: black;
+  margin-bottom: 2rem;
+  margin-left: 4.5rem;
+}
+
+.logo {
+  font-size: 24px;
+
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+
+  color: white;
+}
+
+.search-bar input {
+  padding: 5px;
+
+  border: 1px solid #ccc;
+  margin-right: 90px;
+
+  border-radius: 6px;
+}
+
+.admin-sidebar-search-results {
+  position: fixed;
+
+  top: 9%; /* Adjust as needed */
+
+  left: 20%;
+
+  right: 1%;
+
+  background-color: #f2f0eb;
+
+  border: 1px solid #ccc;
+
+  z-index: 1000;
+
+  max-height: 79vh;
+
+  overflow-y: auto;
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  margin: 0;
+
+  padding: 0;
+
+  padding-left: 0.3rem;
+
+  list-style: none;
+
+  display: none; /* Initially hide the search results */
+}
+
+.admin-sidebar-search-results.show {
+  display: block; /* Show the search results when the class 'show' is added */
+}
+
+/* Search Result Item Styles */
+
+.search-result-item {
+  padding: 5px 10px;
+
+  cursor: pointer;
+}
+
+.search-result-item:hover {
+  background-color: white;
+  color: white;
+}
+
+.nav1-item-name {
+  display: flex;
+
+  align-items: center;
+}
+.nav-search-results > h4 {
+  position: sticky; /* Make the heading sticky */
+
+  top: 0; /* Stick to the top of the scrollable area */
+
+  background-color: #4e4b51; /* Background color to cover content below */
+
+  z-index: 9999; /* Ensure it is above other elements */
+
+  margin: 0; /* Remove default margin */
+
+  padding: 10px; /* Add some padding */
+
+  border-bottom: 1px solid #ccc;
+  border-radius: 5px;
+  color: white;
+}
+
+.product-search-results > h4 {
+  position: sticky; /* Make the heading sticky */
+
+  top: 0; /* Stick to the top of the scrollable area */
+
+  background-color: #4e4b51; /* Background color to cover content below */
+
+  z-index: 9999; /* Ensure it is above other elements */
+
+  margin: 0; /* Remove default margin */
+
+  padding: 10px; /* Add some padding */
+
+  border-bottom: 1px solid #ccc;
+  border-radius: 5px;
+  color: white;
+}
+/* Add Different scroll bars in differen search results */
+
+.users-search-results {
+  max-height: 79vh; /* Set a max height for the scrollable area */
+
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.users-search-results::-webkit-scrollbar {
+  width: 10px; /* Width of the scrollbar */
+}
+
+.users-search-results::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    #6a82fb,
+    #fc5c7d
+  ); /* Gradient color for the scrollbar thumb */
+
+  border-radius: 10px; /* Rounded corners */
+
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+}
+
+.users-search-results::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    180deg,
+    #fc5c7d,
+    #6a82fb
+  ); /* Inverted gradient on hover */
+}
+
+/* Custom Scrollbar for Navigation Search Results */
+
+.nav-search-results {
+  max-height: 79vh; /* Set a max height for the scrollable area */
+
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.nav-search-results::-webkit-scrollbar {
+  width: 10px; /* Width of the scrollbar */
+}
+
+.nav-search-results::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    #ff7e5f,
+    #feb47b
+  ); /* Gradient color for the scrollbar thumb */
+
+  border-radius: 10px; /* Rounded corners */
+
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+}
+
+.nav-search-results::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    180deg,
+    #feb47b,
+    #ff7e5f
+  ); /* Inverted gradient on hover */
+}
+
+/* Custom Scrollbar for Product Search Results */
+
+.product-search-results {
+  max-height: 79vh; /* Set a max height for the scrollable area */
+
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.product-search-results::-webkit-scrollbar {
+  width: 10px; /* Width of the scrollbar */
+}
+
+.product-search-results::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    #00c6ff,
+    #0072ff
+  ); /* Gradient color for the scrollbar thumb */
+
+  border-radius: 10px; /* Rounded corners */
+
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+}
+
+.product-search-results::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    180deg,
+    #0072ff,
+    #00c6ff
+  ); /* Inverted gradient on hover */
+}
+
+.nav1-item {
+  position: relative; /* Position relative to allow absolute positioning of the tooltip */
+
+  display: inline-block; /* Allows the tooltip to position correctly */
+
+  cursor: pointer; /* Change cursor to pointer */
+}
+
+.tooltip {
+  visibility: hidden; /* Hide the tooltip by default */
+
+  width: 150px; /* Set a width for the tooltip */
+
+  background-color: rgba(0, 0, 0, 0.75); /* Semi-transparent background */
+
+  color: #fff; /* White text color */
+
+  text-align: center; /* Center the text */
+
+  border-radius: 5px; /* Rounded corners */
+
+  padding: 5px; /* Padding around the text */
+
+  position: absolute; /* Position it absolutely */
+
+  z-index: 1; /* Ensure it appears above other elements */
+
+  bottom: 125%; /* Position above the item */
+
+  left: 50%; /* Center horizontally */
+
+  margin-left: -75px; /* Adjust for half the width of the tooltip */
+
+  opacity: 0; /* Start hidden */
+
+  transition: opacity 0.3s; /* Smooth transition for visibility */
+}
+
+.nav1-item:hover .tooltip {
+  visibility: visible; /* Show tooltip on hover */
+
+  opacity: 1; /* Fade in */
+}
+.admin-sidebar-icons {
+  font-size: 1.2rem;
+}
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* Hide links on small screens */
+  }
+
+  .navbar-main {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .search-bar {
+    width: 100%;
+
+    margin-top: 10px;
+  }
+}
