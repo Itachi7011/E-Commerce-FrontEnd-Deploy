@@ -87,6 +87,7 @@ const RequestNewSavingAccount = () => {
 
     bodyFormData.append("userImage", userImage);
 
+
     try {
       console.log(bodyFormData);
       await axios.post(
@@ -100,13 +101,16 @@ const RequestNewSavingAccount = () => {
           },
         }
       );
+
       alert("New User Added Successfully");
 
       window.location.reload();
+
     } catch (error) {
       //handle error
 
       console.log(error);
+
     }
   };
 
