@@ -128,9 +128,12 @@ const RequestNewSavingAccount = () => {
               marginTop: "-2rem",
               textAlign: "center",
             }}
+
           >
             {" "}
+
             New Account Form :{" "}
+
           </h2>
         </div>
         <div className="registrationForm">
