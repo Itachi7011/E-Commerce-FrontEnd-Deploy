@@ -17,6 +17,7 @@ const NewBrand = () => {
     content: "",
     brandName: "",
   });
+
   const UserDetails = async () => {
     try {
       const res = await fetch("/api/userProfile", {
@@ -39,6 +40,7 @@ const NewBrand = () => {
       if (!res === 200) {
         throw new Error(`Error during retreive data - ${Error}`);
       }
+
     } catch (err) {
       console.log(`Error during catch of User's Data -  ${err}`);
     }
@@ -63,6 +65,7 @@ const NewBrand = () => {
   const handleDropdownChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
+
   const inputHandler = (e) => {
     name = e.target.name;
     value = e.target.value;
