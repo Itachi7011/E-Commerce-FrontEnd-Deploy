@@ -11,7 +11,6 @@ const BankOffersList = () => {
 
   const { state } = useContext(UserContext);
 
-
   let name, value;
   const navigate = useNavigate();
   const [UserType, setUserType] = useState("");
@@ -61,6 +60,7 @@ const BankOffersList = () => {
       console.log(`Error during catch of User's Data -  ${err}`);
     }
   };
+
   const inputHandler = (e) => {
     name = e.target.name;
     value = e.target.value;
@@ -128,7 +128,7 @@ const BankOffersList = () => {
     }
   };
 
-  const handleDelete = (event,id) => {
+  const handleDelete = (event, id) => {
 
     event.preventDefault();
     // Ask for confirmation before proceeding with the delete action
@@ -138,37 +138,37 @@ const BankOffersList = () => {
 
     if (confirmDelete) {
 
-        // Proceed with the deletion if confirmed
+      // Proceed with the deletion if confirmed
 
-        axios
+      axios
 
-            .post("/api/deleteBankOffer", { id: id })
+        .post("/api/deleteBankOffer", { id: id })
 
-            .then((response) => {
+        .then((response) => {
 
-              alert(response.data.data);
+          alert(response.data.data);
 
-                // Optionally, reload the page or update the UI here
+          // Optionally, reload the page or update the UI here
 
-                window.location.reload();
+          window.location.reload();
 
-            })
+        })
 
-            .catch((err) => {
+        .catch((err) => {
 
-                console.log("Error during delete selected:", err);
+          console.log("Error during delete selected:", err);
 
-            });
+        });
 
     } else {
 
-        // Log that the delete action was canceled
+      // Log that the delete action was canceled
 
-        console.log("Delete action canceled.");
+      console.log("Delete action canceled.");
 
     }
 
-};
+  };
   const handleDeleteSelected = () => {
     const confirmDelete = window.confirm("Are you sure you want to delete this item?");
 
@@ -413,7 +413,7 @@ const BankOffersList = () => {
                                 <button
                                   type="submit"
                                   className=" btn btn-danger px-3"
-                                  onClick={() => handleDelete(event,_id)}
+                                  onClick={() => handleDelete(event, _id)}
                                 >
                                   <i className="fas fa-trash-alt text-white mx-auto"></i>
                                 </button>
