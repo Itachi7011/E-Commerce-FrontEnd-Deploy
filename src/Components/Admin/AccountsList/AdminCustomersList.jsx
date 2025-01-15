@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-// import ReactJsAlert from "reactjs-alert";
-import { useNavigate } from "react-router-dom";
 
+// import ReactJsAlert from "reactjs-alert";
+
+import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { UserContext } from "../../../App";
 
@@ -33,6 +34,7 @@ const AdminCustomersList = () => {
     status: "",
     articleImage: "",
   });
+
   const [Profile, setProfile] = useState("");
 
   const [selectedItems, setSelectedItems] = useState([]);
@@ -47,7 +49,6 @@ const AdminCustomersList = () => {
       [name]: value,
     });
   };
-
 
   const handleDelete = (event, id) => {
     event.preventDefault();
@@ -69,7 +70,6 @@ const AdminCustomersList = () => {
           console.log("Error during delete selected:", err);
         });
     } else {
-
 
       console.log("Delete action canceled.");
 
@@ -130,7 +130,7 @@ const AdminCustomersList = () => {
       });
   }, []);
 
-  console.log("Profile is : ", Profile)
+  // console.log("Profile is : ", Profile)
 
 
   if (Profile.userType !== "Admin") {
