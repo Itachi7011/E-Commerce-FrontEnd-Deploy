@@ -5,9 +5,6 @@ import FilterSidebar from './FilterComponent';
 
 import axios from "axios";
 
-
-
-
 const MyCart = () => {
 
     const location = useLocation();
@@ -54,6 +51,7 @@ const MyCart = () => {
 
 
     useEffect(() => {
+
         axios
             .get("/api/userProfile")
             .then(async (response) => {
@@ -1122,7 +1120,7 @@ const MyCart = () => {
                             </button>
 
                         </li>
-                        
+
                     ))}
 
                     <li>
