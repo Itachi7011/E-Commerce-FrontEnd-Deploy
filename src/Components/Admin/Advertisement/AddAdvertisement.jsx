@@ -6,12 +6,10 @@ import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import { Helmet } from "react-helmet";
 
-
 const AddAdvertisement = () => {
   const navigate = useNavigate();
 
   const tadsTextAreaRef = useRef(null);
-
 
   const [content, setContent] = useState("");
   const [Data, setData] = useState("");
