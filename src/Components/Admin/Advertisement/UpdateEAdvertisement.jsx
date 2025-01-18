@@ -8,6 +8,7 @@ import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 
 const UpdateEAdvertisement = () => {
+
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -30,8 +31,8 @@ const UpdateEAdvertisement = () => {
 
   const [content, setContent] = useState(previouscontentDescription);
 
-
   const SettingDetails = async () => {
+
     try {
       const res = await fetch("/api/mainSettingsList", {
         method: "GET",
@@ -57,6 +58,7 @@ const UpdateEAdvertisement = () => {
       console.log(`Error during catch of User's Data -  ${err}`);
     }
   };
+
   useEffect(() => {
     SettingDetails();
   }, []);
