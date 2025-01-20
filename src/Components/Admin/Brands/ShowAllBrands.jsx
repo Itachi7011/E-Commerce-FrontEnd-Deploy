@@ -9,6 +9,7 @@ const ShowAllTags = () => {
   const { state } = useContext(UserContext);
 
   let name, value;
+
   const [Data, setData] = useState({ post: [] });
 
   const [searchTerm, setSearchTerm] = useState("");
@@ -18,9 +19,11 @@ const ShowAllTags = () => {
   const [itemsPerPage, setItemsPerPage] = useState(10);
 
   const [user, setUser] = useState({
+
     brandName: "",
     content: "",
     createdBy: "",
+
   });
   const [Profile, setProfile] = useState("");
 
@@ -37,6 +40,7 @@ const ShowAllTags = () => {
   };
 
   const handleDelete = (event, id) => {
+
     event.preventDefault();
     const confirmDelete = window.confirm("Are you sure you want to delete this item?");
 

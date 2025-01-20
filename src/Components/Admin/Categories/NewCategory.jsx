@@ -7,6 +7,7 @@ import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 
 const NewTag = () => {
+
   // const navigate = useNavigate();
 
   const [content, setContent] = useState("");
@@ -21,6 +22,7 @@ const NewTag = () => {
   });
   const UserDetails = async () => {
     try {
+
       const res = await fetch("/api/userProfile", {
         method: "GET",
         headers: {
@@ -126,7 +128,7 @@ const NewTag = () => {
             >
               <h3
                 className="text-center"
-                style={{ marginBottom: "1rem", color: "white", fontSize:"1.5rem" }}
+                style={{ marginBottom: "1rem", color: "white", fontSize: "1.5rem" }}
               >
                 Add New Category
               </h3>
@@ -198,8 +200,8 @@ const NewTag = () => {
                           // });
                         });
                       }}
-                      onBlur={(event, editor) => {}}
-                      onFocus={(event, editor) => {}}
+                      onBlur={(event, editor) => { }}
+                      onFocus={(event, editor) => { }}
                       onChange={(event, editor) => {
                         const data = editor.getData();
                         console.log(data);
