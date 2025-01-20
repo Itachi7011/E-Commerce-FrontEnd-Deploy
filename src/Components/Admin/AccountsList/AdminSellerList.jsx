@@ -11,7 +11,6 @@ const AdminSellerList = () => {
 
   const { state } = useContext(UserContext);
 
-
   let name, value;
   const navigate = useNavigate();
   // const [UserType, setUserType] = useState("");
@@ -35,6 +34,7 @@ const AdminSellerList = () => {
     status: "",
     articleImage: "",
   });
+
   const [Profile, setProfile] = useState("");
 
   const [selectedItems, setSelectedItems] = useState([]);
@@ -49,6 +49,7 @@ const AdminSellerList = () => {
       [name]: value,
     });
   };
+  
 
   const handleDelete = (event, id) => {
     event.preventDefault();

@@ -11,7 +11,6 @@ const AdminsList = () => {
 
   const { state } = useContext(UserContext);
 
-
   let name, value;
   const navigate = useNavigate();
   // const [UserType, setUserType] = useState("");
@@ -34,6 +33,7 @@ const AdminsList = () => {
     status: "",
     articleImage: "",
   });
+
   const [Profile, setProfile] = useState("");
 
   const [selectedItems, setSelectedItems] = useState([]);
@@ -51,6 +51,7 @@ const AdminsList = () => {
 
 
   const handleDelete = (event, id) => {
+
     event.preventDefault();
     const confirmDelete = window.confirm("Are you sure you want to delete this item?");
 
