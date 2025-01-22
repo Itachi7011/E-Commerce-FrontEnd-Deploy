@@ -7,8 +7,8 @@ import { UserContext } from "../../../App";
 // import ReactJsAlert from "reactjs-alert";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { ToastContainer, toast } from "react-toastify";
 
+// import { ToastContainer, toast } from "react-toastify";
 
 const ShowMarketData = () => {
   const { state } = useContext(UserContext);

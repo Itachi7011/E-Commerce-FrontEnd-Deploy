@@ -8,6 +8,7 @@ import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 
 const NewTag = () => {
+
   // const navigate = useNavigate();
 
   const inputArr = [
@@ -17,6 +18,7 @@ const NewTag = () => {
       value: "",
     },
   ];
+
   const [image, setImage] = useState("");
   const [Data, setData] = useState("");
   const [arr, setArr] = useState(inputArr);
@@ -60,6 +62,7 @@ const NewTag = () => {
       console.log(`Error during catch of User's Data -  ${err}`);
     }
   };
+
   useEffect(() => {
     UserDetails();
   }, []);
@@ -165,7 +168,7 @@ const NewTag = () => {
             >
               <h3
                 className="text-center"
-                style={{ marginBottom: "1rem", color: "white", fontSize:"1.5rem" }}
+                style={{ marginBottom: "1rem", color: "white", fontSize: "1.5rem" }}
               >
                 Add New Market Data
               </h3>
