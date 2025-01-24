@@ -63,6 +63,7 @@ const NewTag = () => {
     }
   };
 
+
   useEffect(() => {
     UserDetails();
   }, []);

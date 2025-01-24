@@ -13,6 +13,7 @@ const ShowAllTags = () => {
   const { state } = useContext(UserContext);
 
   let name, value;
+
   const navigate = useNavigate();
   // const [UserType, setUserType] = useState("");
   const [Data, setData] = useState({ post: [] });
@@ -29,6 +30,7 @@ const ShowAllTags = () => {
     subItems: "",
     createdBy: "",
   });
+
   const [Profile, setProfile] = useState("");
 
   const [selectedItems, setSelectedItems] = useState([]);
@@ -236,16 +238,16 @@ const ShowAllTags = () => {
                             </td>
                             <td>
                               {itemIcon} :{" "}
-                             <i style={{fontSize:"x-large"}} className={itemIcon}></i>
-                              
+                              <i style={{ fontSize: "x-large" }} className={itemIcon}></i>
+
                               {/* <i dangerouslySetInnerHTML={itemIcon} ></i> */}
                             </td>
                             <td>
                               <ol>
                                 {subItems.map((item, index) => (
                                   <li key={index}>
-                                    {item.name} : 
-                                    
+                                    {item.name} :
+
                                     <a
                                       href={item.link}
                                       target="_blank"
@@ -262,7 +264,7 @@ const ShowAllTags = () => {
                             <td>
                               {new Date(
                                 new Date(dateOfFormSubmission).getTime() -
-                                  19800000
+                                19800000
                               )
                                 .toUTCString()
                                 .slice(0, -12)}

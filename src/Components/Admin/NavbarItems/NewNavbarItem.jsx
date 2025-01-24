@@ -32,6 +32,7 @@ const NewTag = () => {
     createdBy: "",
     dateOfFormSubmission: "",
   });
+  
   const UserDetails = async () => {
     try {
       const res = await fetch("/api/userProfile", {
