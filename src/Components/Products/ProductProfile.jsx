@@ -19,8 +19,6 @@ const ProductProfile = () => {
     // const previousData = location.state._id;
     // const previousId = location.state.id;
 
-
-
     const advertisementCloseButtonRef = useRef(null);
 
     const bankOffersRef = useRef(null);
@@ -1528,6 +1526,24 @@ const ProductProfile = () => {
                                                                     (<span style={{ fontSize: "1rem", color: "red", fontWeight: "bolder" }}>  {addToCart.length} </span>) :
                                                                     ""}
                                                                 <i className="fas fa-cart-plus"></i> </span>
+
+
+
+
+                                                            <span className={addToCart.some(item =>
+
+                                                                item.userEmail === user1.email && item.productId === name
+
+                                                            ) ? "profileProductBuyIcon1" : "profileProductBuyIcon2"}
+                                                                onClick={(event) => handleAddToCart(event, _id, name)}
+                                                            >
+                                                                {user1.userType === "Admin" ?
+                                                                    (<span style={{ fontSize: "1rem", color: "red", fontWeight: "bolder" }}>  {addToCart.length} </span>) :
+                                                                    ""}
+                                                                Buy </span>
+
+
+
                                                             <span style={{ color: "black" }}>
                                                                 Stock Available:{" "}
                                                                 <strong style={{ marginLeft: "1rem" }}>
@@ -1969,7 +1985,7 @@ const ProductProfile = () => {
                                                     <div className="row justify-content-center">
                                                         <div className="col-lg-12 col-12 mb-4">
 
-                                                            <div className="product-profile-dangerouslySetInnerHTML-details"  style={{ border: "1px dotted black", padding: "2rem 8rem", borderRadius: "10px" ,  fontSize: "large" }} dangerouslySetInnerHTML={{ __html: warrantyDetails }} />
+                                                            <div className="product-profile-dangerouslySetInnerHTML-details" style={{ border: "1px dotted black", padding: "2rem 8rem", borderRadius: "10px", fontSize: "large" }} dangerouslySetInnerHTML={{ __html: warrantyDetails }} />
 
                                                         </div>
                                                     </div>
@@ -1985,7 +2001,7 @@ const ProductProfile = () => {
                                             <div className="row justify-content-center">
                                                 <div className="col-lg-12 col-12 mb-4">
 
-                                                    <div className="product-profile-dangerouslySetInnerHTML-details"  style={{ border: "1px dotted black", padding: "2rem 8rem", borderRadius: "10px", fontSize: "large" }} dangerouslySetInnerHTML={{ __html: productDetails }} />
+                                                    <div className="product-profile-dangerouslySetInnerHTML-details" style={{ border: "1px dotted black", padding: "2rem 8rem", borderRadius: "10px", fontSize: "large" }} dangerouslySetInnerHTML={{ __html: productDetails }} />
 
                                                 </div>
                                             </div>
@@ -2125,7 +2141,7 @@ const ProductProfile = () => {
 
                                                                                     </div>
 
-                                                                                    <span style={{ fontSize: "1rem", fontWeight: "bolder", marginLeft: "0rem",color: "black" ,  }}>
+                                                                                    <span style={{ fontSize: "1rem", fontWeight: "bolder", marginLeft: "0rem", color: "black", }}>
                                                                                         <br />     <br />  <br />{title}</span>
 
                                                                                 </strong>
@@ -2137,7 +2153,7 @@ const ProductProfile = () => {
 
                                                                         <h5>
 
-                                                                            <div className="p-2 mt-2 product-profile-comment" style={{  width: "50%", borderRadius: "10px" }} dangerouslySetInnerHTML={{ __html: comment }}>
+                                                                            <div className="p-2 mt-2 product-profile-comment" style={{ width: "50%", borderRadius: "10px" }} dangerouslySetInnerHTML={{ __html: comment }}>
 
                                                                             </div>
 

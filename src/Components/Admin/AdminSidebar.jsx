@@ -132,6 +132,8 @@ const AdminSidebar = () => {
 
   };
 
+  // console.log("all users are: ", allUsers)
+
 
   const filterResults = () => {
 
