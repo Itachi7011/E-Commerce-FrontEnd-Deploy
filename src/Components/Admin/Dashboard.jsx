@@ -82,131 +82,131 @@ const Dashboard = () => {
     UserDetails();
   }, []);
 
-  useEffect(() => {
-    axios
-      .get("/api/allSavingAccounts")
-      .then((response) => {
-        const data = response.data;
+  // useEffect(() => {
+  //   axios
+  //     .get("/api/allSavingAccounts")
+  //     .then((response) => {
+  //       const data = response.data;
 
-        setSavingAccountList({ post: data });
-      })
-      .catch((err) => {
-        console.log("Error during Data:", err);
-      });
-  }, []);
+  //       setSavingAccountList({ post: data });
+  //     })
+  //     .catch((err) => {
+  //       console.log("Error during Data:", err);
+  //     });
+  // }, []);
 
-  useEffect(() => {
-    axios
-      .get("/api/allCurrentAccounts")
-      .then((response) => {
-        const data = response.data;
+  // useEffect(() => {
+  //   axios
+  //     .get("/api/allCurrentAccounts")
+  //     .then((response) => {
+  //       const data = response.data;
 
-        setCurrentAccountList({ post: data });
-      })
-      .catch((err) => {
-        console.log("Error during Data:", err);
-      });
-  }, []);
+  //       setCurrentAccountList({ post: data });
+  //     })
+  //     .catch((err) => {
+  //       console.log("Error during Data:", err);
+  //     });
+  // }, []);
 
-  useEffect(() => {
-    axios
-      .get("/api/savingAccountLoansList")
-      .then((response) => {
-        const data = response.data;
+  // useEffect(() => {
+  //   axios
+  //     .get("/api/savingAccountLoansList")
+  //     .then((response) => {
+  //       const data = response.data;
 
-        setLoanAccountList({ post: data });
-      })
-      .catch((err) => {
-        console.log("Error during Data:", err);
-      });
-  }, []);
+  //       setLoanAccountList({ post: data });
+  //     })
+  //     .catch((err) => {
+  //       console.log("Error during Data:", err);
+  //     });
+  // }, []);
 
-  useEffect(() => {
-    axios
-      .get("/api/onlineUsers")
-      .then((response) => {
-        const data = response.data;
+  // useEffect(() => {
+  //   axios
+  //     .get("/api/onlineUsers")
+  //     .then((response) => {
+  //       const data = response.data;
 
-        const graphData = data.map((item) => ({
-          time: item.dateOfFormSubmission,
+  //       const graphData = data.map((item) => ({
+  //         time: item.dateOfFormSubmission,
 
-          online: item.onlineUsers,
-        }));
+  //         online: item.onlineUsers,
+  //       }));
 
-        setGraphData(graphData);
+  //       setGraphData(graphData);
 
-        setOnlineUsers({ post: data });
-      })
-      .catch((err) => {
-        console.log("Error during Data:", err);
-      });
-  }, []);
+  //       setOnlineUsers({ post: data });
+  //     })
+  //     .catch((err) => {
+  //       console.log("Error during Data:", err);
+  //     });
+  // }, []);
 
-  useEffect(() => {
-    axios
-      .get("/api/onlineEmployeesList")
-      .then((response) => {
-        const data = response.data;
+  // useEffect(() => {
+  //   axios
+  //     .get("/api/onlineEmployeesList")
+  //     .then((response) => {
+  //       const data = response.data;
 
-        setEmpData({ post: data });
-      })
-      .catch((err) => {
-        console.log("Error during Data:", err);
-      });
-  }, []);
+  //       setEmpData({ post: data });
+  //     })
+  //     .catch((err) => {
+  //       console.log("Error during Data:", err);
+  //     });
+  // }, []);
 
-  useEffect(() => {
-    axios
-      .get("/api/ifscCode")
-      .then((response) => {
-        const data = response.data;
+  // useEffect(() => {
+  //   axios
+  //     .get("/api/ifscCode")
+  //     .then((response) => {
+  //       const data = response.data;
 
-        setIFSCCode(data);
-      })
-      .catch((err) => {
-        console.log("Error during Data:", err);
-      });
-  }, []);
+  //       setIFSCCode(data);
+  //     })
+  //     .catch((err) => {
+  //       console.log("Error during Data:", err);
+  //     });
+  // }, []);
 
 
-  useEffect(() => {
-    axios
-      .get("/api/fdRateInterest")
-      .then((response) => {
-        const data = response.data;
+  // useEffect(() => {
+  //   axios
+  //     .get("/api/fdRateInterest")
+  //     .then((response) => {
+  //       const data = response.data;
 
-        setFDRateInterest(data);
-      })
-      .catch((err) => {
-        console.log("Error during Data:", err);
-      });
-  }, []);
+  //       setFDRateInterest(data);
+  //     })
+  //     .catch((err) => {
+  //       console.log("Error during Data:", err);
+  //     });
+  // }, []);
 
-  useEffect(() => {
-    axios
-      .get("/api/loanPercentage")
-      .then((response) => {
-        const data = response.data;
+  // useEffect(() => {
+  //   axios
+  //     .get("/api/loanPercentage")
+  //     .then((response) => {
+  //       const data = response.data;
 
-        setLoanPercentage(data);
-      })
-      .catch((err) => {
-        console.log("Error during Data:", err);
-      });
-  }, []);
+  //       setLoanPercentage(data);
+  //     })
+  //     .catch((err) => {
+  //       console.log("Error during Data:", err);
+  //     });
+  // }, []);
 
-  useEffect(() => {
-    axios
-      .get("/api/phoneAndEmail")
-      .then((response) => {
-        const data = response.data;
+  // useEffect(() => {
+  //   axios
+  //     .get("/api/phoneAndEmail")
+  //     .then((response) => {
+  //       const data = response.data;
 
-        setPhoneAndEmail(data);
-      })
-      .catch((err) => {
-        console.log("Error during Data:", err);
-      });
-  }, []);
+  //       setPhoneAndEmail(data);
+  //     })
+  //     .catch((err) => {
+  //       console.log("Error during Data:", err);
+  //     });
+  // }, []);
 
   useEffect(() => {
     axios
@@ -233,6 +233,8 @@ const Dashboard = () => {
         console.log("Error during Data:", err);
       });
   }, []);
+
+  console.log("systemStatus is: " ,SystemStatus)
 
   useEffect(() => {
     axios
