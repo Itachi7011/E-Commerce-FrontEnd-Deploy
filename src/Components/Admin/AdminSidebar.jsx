@@ -134,11 +134,9 @@ const AdminSidebar = () => {
 
   // console.log("all users are: ", allUsers)
 
-
   const filterResults = () => {
 
     if (!searchTerm) return []; // Return an empty array if search term is empty
-
 
     // Filter results from both navSearchContents and productsData
 
